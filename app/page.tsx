@@ -40,12 +40,14 @@ export default function Home() {
             Infrastructure Layer · Pre-Release
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-[#f0ece4] mb-8 text-balance">
-            Infrastructure for<br />
-            <span className="text-[#C9A84C]">Verified Identity</span><br />
-            at Scale
+            Verification Built Into the <span className="text-[#C9A84C]">Record.</span><br />
+            Not Added After the Fact.
           </h1>
-          <p className="text-base md:text-lg text-[#9a9590] leading-relaxed max-w-xl mb-12 font-light">
-            Aurion Mandala is an identity verification layer built on Structured Verifiable Attributes, for organisations that need provenance, validation, and portability designed into the record itself.
+          <p className="text-base md:text-lg text-[#9a9590] leading-relaxed max-w-xl mb-6 font-light">
+            An identity verification infrastructure layer built on Structured Verifiable Attributes. For organisations where compliance means proving how a credential was verified — not just that it was.
+          </p>
+          <p className="text-[#524e4a] text-xs font-light leading-relaxed max-w-xl mb-10">
+            The design-partner phase is a defined window. Partners in this phase have direct input into protocol and architecture decisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -175,6 +177,14 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Semantic list of engine steps for AI parsers and screen readers */}
+          <ul className="sr-only">
+            <li>Attribute Decomposition: Raw input attributes are decomposed into their constituent SVA components, preserving schema structure and source provenance.</li>
+            <li>Provenance Verification: Each attribute&apos;s origin, validation chain, and constraint metadata are verified against the SVA specification.</li>
+            <li>Constraint Validation: Attribute constraints — type, range, dependency, and composition rules — are validated end-to-end before record assembly.</li>
+            <li>Structural Restructuring: Validated attributes are restructured into a schema-compliant SVA record, with verification embedded as structural properties of the output.</li>
+          </ul>
+
           {/* Bullet points */}
           <div className="grid sm:grid-cols-3 gap-px bg-[#1f1f1f]">
             {[
@@ -262,13 +272,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── FAQ Section ─── */}
+      <section id="faq" className="px-6 md:px-12 lg:px-24 py-28 md:py-36 border-t border-[#1f1f1f] bg-[#0d0d0d]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-4">Common Questions</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-[#f0ece4] mb-16 leading-tight">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-0 divide-y divide-[#1f1f1f]">
+            {[
+              {
+                q: "Is the Mandala transformation engine production-ready?",
+                a: "The core engine is built and processing SVA payloads end-to-end with full provenance tracking. We are not in general availability — we are in a controlled design-partner phase, running real integrations in live environments to stress-test edge cases in attribute composition and constraint resolution. Production-grade does not mean publicly available.",
+              },
+              {
+                q: "How does SVA differ from W3C Verifiable Credentials?",
+                a: "SVA is designed to complement, not replace, W3C Verifiable Credentials. The distinction is structural: W3C VCs provide a container format for credentials, but do not natively encode attribute-level verification rules, constraints, and provenance as intrinsic to the data structure. SVA fills that gap — verification logic is not applied to the record after the fact, it is part of the record's definition.",
+              },
+              {
+                q: "What does integration look like for existing systems?",
+                a: "The Mandala layer sits between your existing data sources and downstream consumers. Originating systems do not need to change their architecture. Design-partner engagements begin with a technical brief and a scoped evaluation proposal — the first conversation is technical, not commercial.",
+              },
+              {
+                q: "What does a design partner engagement involve?",
+                a: "Design partners deploy SVA infrastructure in a live environment, work directly with the protocol under real-world constraints, and participate in structured evaluation cycles. In return, design partners have direct input into architecture and roadmap decisions before the design phase closes. This is a bilateral technical relationship, not a beta programme.",
+              },
+              {
+                q: "Why engage now rather than wait for general availability?",
+                a: "The design-partner phase is the window in which partners have direct influence over protocol design, attribute schema, and integration architecture. Once the protocol crystallises, that influence closes. The organisations working with us now are shaping the infrastructure — not inheriting it.",
+              },
+            ].map((item) => (
+              <div key={item.q} className="py-10">
+                <p className="font-serif text-lg text-[#C9A84C] mb-4 leading-snug">{item.q}</p>
+                <p className="text-[#9a9590] text-sm font-light leading-relaxed max-w-3xl">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA Section ─── */}
       <section id="apply" className="px-6 md:px-12 lg:px-24 py-28 md:py-36 border-t border-[#1f1f1f] bg-[#0d0d0d]">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-xl mb-20">
             <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-4">Access</p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#f0ece4] mb-5 leading-tight">
-              Selective Access.<br />Serious Applications Only.
+              Access by Arrangement.
             </h2>
             <p className="text-[#9a9590] text-sm font-light leading-relaxed">
               Each inquiry is reviewed directly. If the context is right, we follow up with a technical conversation — not a sales call.
@@ -287,12 +336,12 @@ export default function Home() {
               {
                 cta: "Apply as Design Partner",
                 description:
-                  "For teams willing to deploy SVA infrastructure in a live environment and provide structured feedback during the current build phase.",
+                  "For teams integrating SVA infrastructure into live environments during the current build phase. Design partners work directly with the protocol under real constraints — with direct input into architecture and roadmap decisions before the design phase closes.",
                 href: "mailto:design@aurionmandala.com",
                 variant: "secondary",
               },
               {
-                cta: "Institutional Inquiry",
+                cta: "Capital & Strategic Inquiry",
                 description:
                   "For investors, strategic advisors, or institutions exploring alignment. Introductory calls are by prior arrangement only.",
                 href: "mailto:inquiry@aurionmandala.com",
@@ -327,7 +376,7 @@ export default function Home() {
             <span className="text-[#524e4a] text-xs">aurionmandala.com</span>
           </div>
           <p className="text-[#524e4a] text-xs">
-            &copy; 2025 Aurion Mandala. All rights reserved.
+            &copy; 2026 Aurion Mandala. All rights reserved.
           </p>
         </div>
       </footer>

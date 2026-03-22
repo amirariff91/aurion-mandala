@@ -87,6 +87,57 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'Is the Mandala transformation engine production-ready?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The core engine is built and processing SVA payloads end-to-end with full provenance tracking. We are not in general availability — we are in a controlled design-partner phase, running real integrations in live environments to stress-test edge cases in attribute composition and constraint resolution. Production-grade does not mean publicly available.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How does SVA differ from W3C Verifiable Credentials?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SVA is designed to complement, not replace, W3C Verifiable Credentials. The distinction is structural: W3C VCs provide a container format for credentials, but do not natively encode attribute-level verification rules, constraints, and provenance as intrinsic to the data structure. SVA fills that gap — verification logic is not applied to the record after the fact, it is part of the record\'s definition.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What does integration look like for existing systems?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The Mandala layer sits between your existing data sources and downstream consumers. Originating systems do not need to change their architecture. Design-partner engagements begin with a technical brief and a scoped evaluation proposal — the first conversation is technical, not commercial.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What does a design partner engagement involve?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Design partners deploy SVA infrastructure in a live environment, work directly with the protocol under real-world constraints, and participate in structured evaluation cycles. In return, design partners have direct input into architecture and roadmap decisions before the design phase closes. This is a bilateral technical relationship, not a beta programme.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Why engage now rather than wait for general availability?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The design-partner phase is the window in which partners have direct influence over protocol design, attribute schema, and integration architecture. Once the protocol crystallises, that influence closes. The organisations working with us now are shaping the infrastructure — not inheriting it.',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
