@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#f0ece4] font-sans">
+    <div role="main" className="min-h-screen bg-[#0a0a0a] text-[#f0ece4] font-sans">
       {/* ─── Navigation ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 border-b border-[#1f1f1f] bg-[#0a0a0a]/90 backdrop-blur-sm">
+      <nav aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 border-b border-[#1f1f1f] bg-[#0a0a0a]/90 backdrop-blur-sm">
         <Image src="/logo.jpg" alt="Aurion Mandala" width={180} height={50} className="h-10 w-auto object-contain" />
         <div className="flex items-center gap-8">
           <a
@@ -20,7 +20,7 @@ export default function Home() {
             Proof of Concept
           </a>
           <a
-            href="#contact"
+            href="#apply"
             className="text-xs tracking-widest uppercase border border-[#C9A84C]/40 text-[#C9A84C] px-4 py-2 hover:bg-[#C9A84C]/10 transition-colors duration-300"
           >
             Apply as Design Partner
@@ -35,7 +35,7 @@ export default function Home() {
         {/* Subtle gradient vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0a0a0a_100%)] pointer-events-none" />
 
-        <div className="relative max-w-4xl animate-fade-in-up">
+        <article className="relative max-w-4xl animate-fade-in-up">
           <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-8 font-medium">
             Infrastructure Layer · Pre-Release
           </p>
@@ -49,19 +49,19 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#contact"
+              href="#apply"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-[#C9A84C] text-[#0a0a0a] text-sm font-medium tracking-widest uppercase hover:bg-[#d4b55e] transition-colors duration-300"
             >
               Request Access
             </a>
             <a
-              href="#contact"
+              href="#apply"
               className="inline-flex items-center justify-center px-7 py-3.5 border border-[#1f1f1f] text-[#9a9590] text-sm font-light tracking-widest uppercase hover:border-[#C9A84C]/30 hover:text-[#f0ece4] transition-colors duration-300"
             >
               Apply as Design Partner
             </a>
           </div>
-        </div>
+        </article>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
@@ -81,6 +81,9 @@ export default function Home() {
               </h2>
             </div>
             <div className="space-y-7 text-[#9a9590] font-light leading-relaxed">
+              <p>
+                Aurion Mandala is an identity verification infrastructure layer that introduces Structured Verifiable Attributes (SVA) as the foundational data model. Unlike conventional verification systems that treat verification as an operational step, Mandala embeds verification as a structural property of the credential record itself — enabling provenance, validation, and portability by design.
+              </p>
               <p>
                 Structured Verifiable Attributes — SVAs — are the foundational unit of the Aurion Mandala system. Unlike conventional credential formats, SVAs are designed for composability: each attribute carries its provenance, its constraints, and its verification method as intrinsic structure, not metadata appended after the fact.
               </p>
@@ -120,6 +123,8 @@ export default function Home() {
                 className="w-full max-w-4xl mx-auto"
                 aria-label="SVA to Mandala architecture diagram"
               >
+                <title>Aurion Mandala Architecture: SVA Data Layer → Mandala Engine → Verified Identity Record</title>
+                <desc>Diagram showing how raw Structured Verifiable Attribute inputs flow through the Mandala Transformation Engine — which performs attribute decomposition, provenance verification, constraint validation, and structural restructuring — to produce a verified, portable identity record.</desc>
                 <defs>
                   <filter id="mandala-glow" x="-20%" y="-20%" width="140%" height="140%">
                     <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#C9A84C" floodOpacity="0.45" />
@@ -193,6 +198,22 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Key term definitions — semantic reference for AI parsers */}
+          <dl className="mt-14 pt-10 border-t border-[#1f1f1f] space-y-5">
+            <div>
+              <dt className="text-[#524e4a] text-[10px] tracking-[0.2em] uppercase font-medium mb-1">SVA (Structured Verifiable Attribute)</dt>
+              <dd className="text-[#524e4a] text-xs font-light leading-relaxed max-w-2xl">A credential format that encodes verification rules, attribute constraints, and provenance metadata directly into the data structure.</dd>
+            </div>
+            <div>
+              <dt className="text-[#524e4a] text-[10px] tracking-[0.2em] uppercase font-medium mb-1">Mandala Transformation Engine</dt>
+              <dd className="text-[#524e4a] text-xs font-light leading-relaxed max-w-2xl">The processing layer that converts raw attribute inputs into verified, schema-compliant SVA records.</dd>
+            </div>
+            <div>
+              <dt className="text-[#524e4a] text-[10px] tracking-[0.2em] uppercase font-medium mb-1">Design Partner</dt>
+              <dd className="text-[#524e4a] text-xs font-light leading-relaxed max-w-2xl">An organisation participating in the controlled deployment phase to test SVA infrastructure in real-world integration scenarios.</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -242,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* ─── CTA Section ─── */}
-      <section id="contact" className="px-6 md:px-12 lg:px-24 py-28 md:py-36 border-t border-[#1f1f1f] bg-[#0d0d0d]">
+      <section id="apply" className="px-6 md:px-12 lg:px-24 py-28 md:py-36 border-t border-[#1f1f1f] bg-[#0d0d0d]">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-xl mb-20">
             <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-4">Access</p>
