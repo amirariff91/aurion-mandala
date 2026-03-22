@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Aurion Mandala — Structured Verifiable Attribute Infrastructure',
     description: 'An identity verification infrastructure layer built on Structured Verifiable Attributes. Selective access for design partners, investors, and strategic collaborators.',
     siteName: 'Aurion Mandala',
-    images: [{ url: '/logo.jpg', width: 1200, height: 630, alt: 'Aurion Mandala' }],
+    images: [{ url: '/logo.jpg', width: 670, height: 210, alt: 'Aurion Mandala' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -64,12 +64,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
+              '@id': 'https://www.aurionmandala.com',
               name: 'Aurion Mandala',
               url: 'https://www.aurionmandala.com',
               logo: 'https://www.aurionmandala.com/logo.jpg',
               description: 'Aurion Mandala is an identity verification infrastructure layer built on Structured Verifiable Attributes (SVA). Currently in design-partner phase, working with select partners on deployment and validation.',
               foundingDate: '2024',
-              sameAs: [],
+              email: 'inquiry@aurionmandala.com',
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'Partnership Inquiry',

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div role="main" className="min-h-screen bg-[#0a0a0a] text-[#f0ece4] font-sans">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#f0ece4] font-sans">
       {/* ─── Navigation ─── */}
       <nav aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 border-b border-[#1f1f1f] bg-[#0a0a0a]/90 backdrop-blur-sm">
         <Image src="/logo.jpg" alt="Aurion Mandala" width={180} height={50} className="h-10 w-auto object-contain" />
@@ -45,7 +45,7 @@ export default function Home() {
             at Scale
           </h1>
           <p className="text-base md:text-lg text-[#9a9590] leading-relaxed max-w-xl mb-12 font-light">
-            Aurion Mandala is an identity verification layer built around Structured Verifiable Attributes, for organisations that need provenance, validation, and portability designed into the record itself.
+            Aurion Mandala is an identity verification layer built on Structured Verifiable Attributes, for organisations that need provenance, validation, and portability designed into the record itself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -108,7 +108,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-4">Technical Credibility</p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#f0ece4] mb-5 leading-tight">
-            Beyond Conceptual
+            Active Infrastructure. Real Constraints.
           </h2>
           <p className="text-[#9a9590] text-base font-light mb-16 max-w-xl">
             The current phase is focused on design-partner evaluation, implementation testing, and protocol refinement.
@@ -233,7 +233,7 @@ export default function Home() {
             {/* Left: Investors — large featured card */}
             <div className="bg-[#0a0a0a] p-10 md:p-14 flex flex-col justify-between">
               <div>
-                <p className="font-serif text-2xl md:text-3xl text-[#C9A84C] mb-6">Investors</p>
+                <h3 className="font-serif text-2xl md:text-3xl text-[#C9A84C] mb-6">Investors</h3>
                 <p className="text-[#9a9590] text-sm font-light leading-relaxed max-w-sm">
                   Pre-revenue stage investors with portfolio exposure to identity infrastructure, enterprise software, or regulated data systems. We are not fundraising broadly — we are identifying one or two aligned capital partners.
                 </p>
@@ -246,13 +246,13 @@ export default function Home() {
             {/* Right: 2 stacked cards */}
             <div className="flex flex-col gap-px bg-[#1f1f1f]">
               <div className="bg-[#0a0a0a] p-8 flex-1">
-                <p className="font-serif text-lg text-[#C9A84C] mb-4">Enterprise Partners</p>
+                <h3 className="font-serif text-lg text-[#C9A84C] mb-4">Enterprise Partners</h3>
                 <p className="text-[#9a9590] text-sm font-light leading-relaxed">
                   Organisations with active, complex identity verification needs — particularly those operating across jurisdictions or inside regulated industries where attribute provenance is a compliance requirement, not a preference.
                 </p>
               </div>
               <div className="bg-[#0a0a0a] p-8 flex-1">
-                <p className="font-serif text-lg text-[#C9A84C] mb-4">Strategic Collaborators</p>
+                <h3 className="font-serif text-lg text-[#C9A84C] mb-4">Strategic Collaborators</h3>
                 <p className="text-[#9a9590] text-sm font-light leading-relaxed">
                   Teams building adjacent infrastructure — credential issuers, verification networks, access control systems — where native SVA support would create compound value for both sides.
                 </p>
@@ -271,7 +271,7 @@ export default function Home() {
               Selective Access.<br />Serious Applications Only.
             </h2>
             <p className="text-[#9a9590] text-sm font-light leading-relaxed">
-              Each inquiry is reviewed directly. If there is fit, we follow up with a technical conversation.
+              Each inquiry is reviewed directly. If the context is right, we follow up with a technical conversation — not a sales call.
             </p>
           </div>
 
@@ -331,6 +331,6 @@ export default function Home() {
           </p>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
