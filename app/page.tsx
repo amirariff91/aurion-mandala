@@ -39,10 +39,13 @@ export default function Home() {
           <p className="text-xs tracking-[0.3em] uppercase text-[#C9A84C] mb-8 font-medium">
             Infrastructure Layer · Pre-Release
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-[#f0ece4] mb-8 text-balance">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-[#f0ece4] mb-4 text-balance">
             Verification Built Into the <span className="text-[#C9A84C]">Record.</span><br />
             Not Added After the Fact.
           </h1>
+          <p className="text-[10px] tracking-[0.15em] text-[#524e4a] mb-8 font-light">
+            1000 People.wav — SVA of an audio track.
+          </p>
           <p className="text-base md:text-lg text-[#9a9590] leading-relaxed max-w-xl mb-6 font-light">
             An identity verification infrastructure layer built on Structured Verifiable Attributes. For organisations where compliance means proving how a credential was verified — not just that it was.
           </p>
