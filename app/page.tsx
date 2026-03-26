@@ -43,9 +43,19 @@ export default function Home() {
             Verification Built Into the <span className="text-[#C9A84C]">Record.</span><br />
             Not Added After the Fact.
           </h1>
-          <p className="text-[10px] tracking-[0.15em] text-[#524e4a] mb-8 font-light">
+          <p className="text-[10px] tracking-[0.15em] text-[#524e4a] mb-6 font-light">
             1000 People.wav — SVA of an audio track.
           </p>
+          <div className="mb-10 max-w-2xl">
+            <Image
+              src="/mandala-hero.jpg"
+              alt="Aurion Mandala — cosmic mandala visualisation"
+              width={900}
+              height={506}
+              className="w-full object-cover opacity-80"
+              priority
+            />
+          </div>
           <p className="text-base md:text-lg text-[#9a9590] leading-relaxed max-w-xl mb-6 font-light">
             An identity verification infrastructure layer built on Structured Verifiable Attributes. For organisations where compliance means proving how a credential was verified — not just that it was.
           </p>
